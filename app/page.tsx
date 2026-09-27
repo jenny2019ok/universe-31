@@ -18,14 +18,70 @@ const ifOptions = ["选了另一份工作", "没有认识那个人", "勇敢一�
 const otherOptions = ["旅行", "换工作", "恋爱", "一个人生活", "学东西", "创业", "躺一年", "其他"];
 const wishes = ["好运", "钱", "爱", "自由", "勇气", "新鲜事", "健康", "睡眠"];
 const dayScenes: Record<string, string[]> = {
-  旅行: ["清晨六点，你在一座陌生城市的车站醒来。没有攻略，只有一张皱掉的车票。", "黄昏时，你坐在海边一家小店里。菜单看不懂，但晚餐很好吃。"],
-  换工作: ["新的办公桌旁有一扇窗。你还没记住同事的名字，却已经喜欢上了下班的路。", "第一周并不轻松。午休时，你发现自己又开始期待明天。"],
-  恋爱: ["你们为晚餐吃什么争论了十分钟，最后买了两份完全不同的。", "雨突然下大了。你们在便利店门口等雨停，聊了些没用又很快乐的话。"],
-  一个人生活: ["厨房里只亮着一盏小灯。晚饭做得有点咸，但这间屋子的安静刚刚好。", "你把家具挪了一个位置。没人问为什么，这个决定却让你开心了半天。"],
-  学东西: ["笔记本上全是错题。你终于把昨天怎么都做不对的那一页翻过去了。", "你练了很久的那个动作，今天第一次像样了一点。"],
-  创业: ["第一位客人问了很多问题，最后只买了一件很小的东西。你把收据留了下来。", "凌晨一点，你改完第三版计划。窗外没有烟花，但你还是给自己倒了杯茶。"],
-  躺一年: ["下午三点，阳光在地板上移动。你没有用这一天证明什么。", "你睡到自然醒，然后慢慢把一颗橘子剥得很完整。"],
-  其他: ["那里的你真的试了一次。过程比想象中乱，但故事从那天开始有了新的一页。", "你推开一扇以前总是路过的门。里面没有奇迹，却有很新鲜的空气。"],
+  旅行: [
+    "清晨六点，你在一座陌生城市的车站醒来。没有攻略，只有一张皱掉的车票。",
+    "黄昏时，你坐在海边一家小店里。菜单看不懂，但晚餐很好吃。",
+    "你坐错了一班车，意外经过一整片金色的麦田。你决定晚点再到目的地。",
+    "住处的窗外传来不熟悉的语言。你听不懂，却觉得今天很安心。",
+    "路边有人帮你拍了张照片。照片有点歪，你还是把它留在了收藏夹。",
+    "你在地图上给一条小巷做了标记：这里的面包很好吃，下次还来。",
+  ],
+  换工作: [
+    "新的办公桌旁有一扇窗。你还没记住同事的名字，却已经喜欢上了下班的路。",
+    "第一周并不轻松。午休时，你发现自己又开始期待明天。",
+    "开会时你提出了一个小想法。有人接着往下说，你第一次觉得自己在这里有位置。",
+    "你下班后没有立刻回消息，而是在路边买了束花庆祝普通的星期三。",
+    "旧同事问你适应得怎么样。你想了想，说：还在学，但我挺喜欢。",
+    "你完成了第一件独立负责的事。没有掌声，只有一杯特别好喝的咖啡。",
+  ],
+  恋爱: [
+    "你们为晚餐吃什么争论了十分钟，最后买了两份完全不同的。",
+    "雨突然下大了。你们在便利店门口等雨停，聊了些没用又很快乐的话。",
+    "你发了一张糊掉的月亮照片。对方回：我这里也看到了。",
+    "你们一起逛超市，认真讨论哪种洗衣液闻起来像春天。",
+    "电影散场以后，你们都说结局一般，却在回家的路上聊了很久。",
+    "你说今天有点累。对方没有追问，只把热饮递到你手里。",
+  ],
+  一个人生活: [
+    "厨房里只亮着一盏小灯。晚饭做得有点咸，但这间屋子的安静刚刚好。",
+    "你把家具挪了一个位置。没人问为什么，这个决定却让你开心了半天。",
+    "周末早晨没有闹钟。你打开窗，让风替你决定今天先做什么。",
+    "你买了一只很大的杯子，只因为它在你手里刚刚好。",
+    "深夜你给自己煮了一碗面。屋子很安静，热气慢慢爬上眼镜。",
+    "你把最喜欢的画挂在门边。每次进门，都像有人替你说了句欢迎回来。",
+  ],
+  学东西: [
+    "笔记本上全是错题。你终于把昨天怎么都做不对的那一页翻过去了。",
+    "你练了很久的那个动作，今天第一次像样了一点。",
+    "老师说还差一点，你却听出了这次和上次不一样。",
+    "你试着向朋友解释刚学会的概念，说着说着，自己也更明白了。",
+    "练习记录里有一小段空白。你没有补上，只从今天重新开始。",
+    "你在路上突然认出了一个以前看不懂的词，心里偷偷亮了一下。",
+  ],
+  创业: [
+    "第一位客人问了很多问题，最后只买了一件很小的东西。你把收据留了下来。",
+    "凌晨一点，你改完第三版计划。窗外没有烟花，但你还是给自己倒了杯茶。",
+    "你给第一位复购的客人写了张小卡片。写完又重写，因为太像广告。",
+    "那天的数据很普通。你关掉表格，去听一个真实的人说她为什么喜欢它。",
+    "伙伴说我们试试吧。你们都不知道结果，却一起把第一步写在了白板上。",
+    "你删掉了一个很喜欢但没人用的功能。晚上回家时，反而走得轻快。",
+  ],
+  躺一年: [
+    "下午三点，阳光在地板上移动。你没有用这一天证明什么。",
+    "你睡到自然醒，然后慢慢把一颗橘子剥得很完整。",
+    "你在公园坐了一个小时，没有拍照，也没有记录步数。",
+    "今天的计划只有洗床单。晒好的被子让整个夜晚都有了好闻的味道。",
+    "朋友问你最近在忙什么。你想了想，回答：我正在把自己养回来。",
+    "你读了三页书就睡着了。醒来时天还亮着，一切都来得及。",
+  ],
+  其他: [
+    "那里的你真的试了一次。过程比想象中乱，但故事从那天开始有了新的一页。",
+    "你推开一扇以前总是路过的门。里面没有奇迹，却有很新鲜的空气。",
+    "你把那个念头说出了口。对面的人没有笑，只问你想从哪里开始。",
+    "第一次做得并不好。你还是把它拍下来，留给以后回头看。",
+    "你选择了一条不熟悉的路。晚上回来，鞋底多了一点泥。",
+    "你发现自己不必马上给它起名字。能试一次，已经很好。",
+  ],
 };
 const initialCounts: Counts = Object.fromEntries(wishes.map((w) => [w, 0]));
 
@@ -51,6 +107,7 @@ export default function Home() {
   const [visitorTotal, setVisitorTotal] = useState(0);
   const [counts, setCounts] = useState<Counts>(initialCounts);
   const [saveError, setSaveError] = useState("");
+  const ifTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const holdTimer = useRef<ReturnType<typeof setInterval> | null>(null);
   const holdStarted = useRef<number>(0);
   const visitorKey = useRef<string>("");
@@ -102,8 +159,7 @@ export default function Home() {
           const planet = (input as { planet?: unknown })?.planet;
           if (typeof planet !== "string" || !["if", "okay", "other", "wealth", "hole"].includes(planet)) throw new Error("未知星球");
           const target = planet as Planet;
-          setVisited((v) => v.includes(target) ? v : [...v, target]);
-          setScreen(target);
+          enterPlanet(target);
           return { opened: names[target] };
         },
       }, { signal: controller.signal })).catch(() => {});
@@ -111,7 +167,15 @@ export default function Home() {
     return () => controller.abort();
   }, [screen]);
 
+  const resetPlanet = (p: Planet) => {
+    if (p === "if") { if (ifTimer.current) clearTimeout(ifTimer.current); setIfPick(null); setIfResult(false); }
+    if (p === "okay") setOkayPick(null);
+    if (p === "other") { setOtherPick(null); setScene(null); }
+    if (p === "wealth") setWealthStep(0);
+    if (p === "hole") { setHoleStep(0); setHoleAnswer(null); }
+  };
   const enterPlanet = (p: Planet) => {
+    resetPlanet(p);
     setScreen(p);
     setVisited((v) => v.includes(p) ? v : [...v, p]);
   };
@@ -128,7 +192,7 @@ export default function Home() {
     }, 30);
   };
   const stopHold = () => { if (holdTimer.current) clearInterval(holdTimer.current); if (centerStep === 1) setHold(0); };
-  useEffect(() => () => { if (holdTimer.current) clearInterval(holdTimer.current); }, []);
+  useEffect(() => () => { if (holdTimer.current) clearInterval(holdTimer.current); if (ifTimer.current) clearTimeout(ifTimer.current); }, []);
   const finishWish = async (choice: string) => { setWishSelf(choice); await syncVisit("wish", wishAshley || "", choice); setScreen("ending"); };
   const formatId = (id: number | null) => `#${String(id || Math.max(visitorTotal, 1)).padStart(4, "0")}`;
 
@@ -150,11 +214,11 @@ export default function Home() {
 
     {screen === "map" && <section className="map-stage reveal"><div className="map-heading"><p className="eyebrow">UNIVERSE 31 / STARMAP</p><h1>去哪里看看？</h1><p>选择一颗星球。这里没有正确的游览路线。</p></div><div className="starmap"><div className="orbit orbit-a"/><div className="orbit orbit-b"/><span className="map-center" aria-hidden="true" />{(["if","okay","other","wealth","hole"] as Planet[]).map((p, i) => <button key={p} className={`planet planet-${p} ${visited.includes(p) ? "visited" : ""}`} onClick={() => enterPlanet(p)} aria-label={`进入${names[p]}`}><span className="planet-globe"/><span className="planet-label"><small>0{i + 1} / {p === "hole" ? "RESTRICTED" : "DISCOVER"}</small>{names[p]}{visited.includes(p) && <b> ✓</b>}</span></button>)}{visited.length >= 3 && <button className="planet planet-core" onClick={openCenter}><span className="planet-globe"/><span className="planet-label"><small>NEW SIGNAL</small>宇宙中心</span></button>}</div><div className="map-footer"><span>探索进度 {visited.length} / 3 {visited.length >= 3 ? "· 中心已显现" : "· 宇宙中心尚未定位"}</span><span>点击星球进入</span></div></section>}
 
-    {screen === "if" && <section className="content-panel planet-panel reveal"><button className="back" onClick={backToMap}>← 返回星图</button><p className="eyebrow">PLANET 01 / ALTERNATE TIMELINES</p><h1>如果星</h1><p className="lead">这里存放所有<br/><strong>“如果当时……”</strong></p>{!ifPick ? <><p className="prompt">你想偷看哪一种可能？</p><div className="choice-stack">{ifOptions.map(o => <button className="choice" key={o} onClick={() => { setIfPick(o); setTimeout(() => setIfResult(true), 1800); }}><span>{o === "我没有特别想改的" ? o : `如果当时${o}`}</span><span>↗</span></button>)}</div></> : !ifResult ? <div className="calculation"><span className="loader"/>正在计算另一条时间线……</div> : <div className="narrative-result"><p className="system-fail">计算失败。</p><p>平行宇宙拒绝透露答案。</p><div className="pause-line"/><p>不过那里的你，偶尔也会想：</p><blockquote>“如果当初选了另一条路呢？”</blockquote></div>}</section>}
+    {screen === "if" && <section className="content-panel planet-panel reveal"><button className="back" onClick={backToMap}>← 返回星图</button><p className="eyebrow">PLANET 01 / ALTERNATE TIMELINES</p><h1>如果星</h1><p className="lead">这里存放所有<br/><strong>“如果当时……”</strong></p>{!ifPick ? <><p className="prompt">你想偷看哪一种可能？</p><div className="choice-stack">{ifOptions.map(o => <button className="choice" key={o} onClick={() => { setIfPick(o); ifTimer.current = setTimeout(() => setIfResult(true), 1800); }}><span>{o === "我没有特别想改的" ? o : `如果当时${o}`}</span><span>↗</span></button>)}</div></> : !ifResult ? <div className="calculation"><span className="loader"/>正在计算另一条时间线……</div> : <div className="narrative-result"><p className="system-fail">计算失败。</p><p>平行宇宙拒绝透露答案。</p><div className="pause-line"/><p>不过那里的你，偶尔也会想：</p><blockquote>“如果当初选了另一条路呢？”</blockquote><button className="outline-button" onClick={() => { setIfPick(null); setIfResult(false); }}>再看一种可能 ↗</button></div>}</section>}
 
-    {screen === "okay" && <section className="content-panel planet-panel reveal"><button className="back" onClick={backToMap}>← 返回星图</button><p className="eyebrow">PLANET 02 / SOFT LANDING</p><h1>没关系星</h1><p className="lead">这里没有考核，<br/>也不需要交一份完美的今天。</p>{!okayPick ? <><p className="prompt">最近最想听哪一句？</p><div className="choice-stack">{["慢一点也没关系", "做不到也没关系", "还没想明白也没关系"].map(o => <button key={o} className="choice" onClick={() => setOkayPick(o)}><span>{o}</span><span>↗</span></button>)}</div></> : <div className="narrative-result"><p className="soft-quote">{okayPick}。</p><p>宇宙已收到。你可以在这里多待一会儿。</p><span className="small-star">✦</span></div>}</section>}
+    {screen === "okay" && <section className="content-panel planet-panel reveal"><button className="back" onClick={backToMap}>← 返回星图</button><p className="eyebrow">PLANET 02 / SOFT LANDING</p><h1>没关系星</h1><p className="lead">这里没有考核，<br/>也不需要交一份完美的今天。</p>{!okayPick ? <><p className="prompt">最近最想听哪一句？</p><div className="choice-stack">{["慢一点也没关系", "做不到也没关系", "还没想明白也没关系"].map(o => <button key={o} className="choice" onClick={() => setOkayPick(o)}><span>{o}</span><span>↗</span></button>)}</div></> : <div className="narrative-result"><p className="soft-quote">{okayPick}。</p><p>宇宙已收到。你可以在这里多待一会儿。</p><span className="small-star">✦</span><button className="outline-button" onClick={() => setOkayPick(null)}>再选一句 ↗</button></div>}</section>}
 
-    {screen === "other" && <section className="content-panel planet-panel reveal"><button className="back" onClick={backToMap}>← 返回星图</button><p className="eyebrow">PLANET 03 / THE OTHER YOU</p><h1>另一个我星</h1><p className="lead">在31号宇宙，每个人都有一个<br/><strong>没有活出来的版本。</strong></p>{!otherPick ? <><p className="prompt">如果完全没人评价你，你最想试一次什么？</p><div className="choice-grid">{otherOptions.map(o => <button key={o} className="choice" onClick={() => setOtherPick(o)}><span>{o}</span><span>↗</span></button>)}</div></> : <div className="narrative-result"><p className="eyebrow">平行世界的你 · 宇宙编号 31-{(otherPick.charCodeAt(0) * 7) % 900 + 100}</p><p className="big-copy">那里的你真的去做了。</p><p>情况没有想象中完美。<br/>但活得还挺有意思。</p>{!scene ? <button className="outline-button" onClick={() => { const options = dayScenes[otherPick] || dayScenes["其他"]; setScene(options[Math.floor(Math.random() * options.length)]); }}>偷看 TA 的一天 ↗</button> : <div className="scene-card"><span>ONE DAY / 另一条时间线</span><p>{scene}</p><button className="text-link" onClick={() => { const options = dayScenes[otherPick] || dayScenes["其他"]; setScene(options.find(x => x !== scene) || options[0]); }}>再看另一天 ↗</button></div>}</div>}</section>}
+    {screen === "other" && <section className="content-panel planet-panel reveal"><button className="back" onClick={backToMap}>← 返回星图</button><p className="eyebrow">PLANET 03 / THE OTHER YOU</p><h1>另一个我星</h1><p className="lead">在31号宇宙，每个人都有一个<br/><strong>没有活出来的版本。</strong></p>{!otherPick ? <><p className="prompt">如果完全没人评价你，你最想试一次什么？</p><div className="choice-grid">{otherOptions.map(o => <button key={o} className="choice" onClick={() => setOtherPick(o)}><span>{o}</span><span>↗</span></button>)}</div></> : <div className="narrative-result"><p className="eyebrow">平行世界的你 · 宇宙编号 31-{(otherPick.charCodeAt(0) * 7) % 900 + 100}</p><p className="big-copy">那里的你真的去做了。</p><p>情况没有想象中完美。<br/>但活得还挺有意思。</p>{!scene ? <button className="outline-button" onClick={() => { const options = dayScenes[otherPick] || dayScenes["其他"]; setScene(options[Math.floor(Math.random() * options.length)]); }}>偷看 TA 的一天 ↗</button> : <div className="scene-card"><span>ONE DAY / 另一条时间线</span><p>{scene}</p><button className="text-link" onClick={() => { const options = dayScenes[otherPick] || dayScenes["其他"]; setScene(options[(options.indexOf(scene) + 1) % options.length]); }}>再看另一天 ↗</button></div>}<button className="outline-button" onClick={() => { setOtherPick(null); setScene(null); }}>换个方向 ↗</button></div>}</section>}
 
     {screen === "wealth" && <section className="content-panel planet-panel wealth-panel reveal"><button className="back" onClick={backToMap}>← 返回星图</button><p className="eyebrow">PLANET 04 / MOST VISITED</p><h1>暴富星</h1><p className="lead">欢迎来到整个31号宇宙<br/><strong>访问量最高的星球。</strong></p><div className="coin-field" aria-hidden="true"><span>◉</span><span>◉</span><span>◉</span><span>◉</span><span>◉</span><span>◉</span></div>{wealthStep === 0 ? <button className="main-button" onClick={() => setWealthStep(1)}>领取宇宙财富 <span>↗</span></button> : <div className="wealth-result"><p className="eyebrow">TRANSFER COMPLETED</p><strong>¥8,888,888</strong><p>已到账。账户类型：<b>精神账户</b></p>{wealthStep === 1 ? <button className="outline-button" onClick={() => setWealthStep(2)}>退货</button> : <><p className="refund">不支持退款。</p><div className="lucky-number">今日幸运数字 <b>{lucky}</b></div><p className="microcopy">没有任何科学依据。但你可以信一下。</p></>}</div>}</section>}
 
